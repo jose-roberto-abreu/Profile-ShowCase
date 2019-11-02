@@ -38,6 +38,7 @@ class InactiveMessageTableViewCell: UITableViewCell {
 extension InactiveMessageTableViewCell {
     
     func setupViews() {
+        selectionStyle = .none
         separatorInset.right = .greatestFiniteMagnitude
         
         titleLabel.font = UIFont.boldSystemFont(ofSize: 19.0)

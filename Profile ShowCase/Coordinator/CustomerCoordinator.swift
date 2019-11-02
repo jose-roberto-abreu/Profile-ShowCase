@@ -31,7 +31,8 @@ class CustomerCoordinator: Coordinator {
 extension CustomerCoordinator {
     
     func showCustomerDetail(for customer: Customer) {
-        let customerDetailViewModel = CustomerDetailViewModel(customer: customer, rowAdapter: makeRowAdapter())
+        let rowAdapter = makeRowAdapter(for: customer, isAdmin: false)
+        let customerDetailViewModel = CustomerDetailViewModel(customer: customer, rowAdapter: rowAdapter)
         let customerDetailViewController = CustomerDetailViewController(viewModel: customerDetailViewModel)
         
         rootViewController?.pushViewController(customerDetailViewController, animated: true)
@@ -46,8 +47,13 @@ extension CustomerCoordinator {
         return CustomerRemoteService()
     }
     
-    func makeRowAdapter() -> RowAdapter {
-        return InactiveCustomerAdapter()
+    func makeRowAdapter(for customer: Customer, isAdmin: Bool) -> RowAdapter {
+        if customer.isInactive {
+            return InactiveCustomerAdapter()
+        } else if isAdmin {
+            return FamilyMemberAdapter()
+        }
+        return CustomerAdapter()
     }
     
 }

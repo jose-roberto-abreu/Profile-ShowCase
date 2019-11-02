@@ -33,6 +33,15 @@
 		5B2D8011236E1280001DA868 /* RowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8010236E1280001DA868 /* RowAdapter.swift */; };
 		5B2D8015236E12C7001DA868 /* InactiveCustomerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8014236E12C7001DA868 /* InactiveCustomerAdapter.swift */; };
 		5B2D8017236E1435001DA868 /* TableViewBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8016236E1435001DA868 /* TableViewBinder.swift */; };
+		5B2D801A236E173C001DA868 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8019236E173C001DA868 /* TitleTableViewCell.swift */; };
+		5B2D801C236E18CD001DA868 /* PersonalInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D801B236E18CD001DA868 /* PersonalInformationTableViewCell.swift */; };
+		5B2D801E236E1990001DA868 /* TitleRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D801D236E1990001DA868 /* TitleRowViewModel.swift */; };
+		5B2D8020236E19D1001DA868 /* CustomerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D801F236E19D1001DA868 /* CustomerAdapter.swift */; };
+		5B2D8022236E19DD001DA868 /* PersonalInformationRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8021236E19DD001DA868 /* PersonalInformationRowViewModel.swift */; };
+		5B2D8024236E1BFD001DA868 /* FamilyDependentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8023236E1BFD001DA868 /* FamilyDependentTableViewCell.swift */; };
+		5B2D8026236E1CB4001DA868 /* FamilyDependentRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8025236E1CB4001DA868 /* FamilyDependentRowViewModel.swift */; };
+		5B2D8028236E1DC9001DA868 /* FamilyMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8027236E1DC9001DA868 /* FamilyMember.swift */; };
+		5B2D802A236E1DFF001DA868 /* FamilyMemberAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8029236E1DFF001DA868 /* FamilyMemberAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +86,15 @@
 		5B2D8010236E1280001DA868 /* RowAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowAdapter.swift; sourceTree = "<group>"; };
 		5B2D8014236E12C7001DA868 /* InactiveCustomerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactiveCustomerAdapter.swift; sourceTree = "<group>"; };
 		5B2D8016236E1435001DA868 /* TableViewBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewBinder.swift; sourceTree = "<group>"; };
+		5B2D8019236E173C001DA868 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		5B2D801B236E18CD001DA868 /* PersonalInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationTableViewCell.swift; sourceTree = "<group>"; };
+		5B2D801D236E1990001DA868 /* TitleRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRowViewModel.swift; sourceTree = "<group>"; };
+		5B2D801F236E19D1001DA868 /* CustomerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerAdapter.swift; sourceTree = "<group>"; };
+		5B2D8021236E19DD001DA868 /* PersonalInformationRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationRowViewModel.swift; sourceTree = "<group>"; };
+		5B2D8023236E1BFD001DA868 /* FamilyDependentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDependentTableViewCell.swift; sourceTree = "<group>"; };
+		5B2D8025236E1CB4001DA868 /* FamilyDependentRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDependentRowViewModel.swift; sourceTree = "<group>"; };
+		5B2D8027236E1DC9001DA868 /* FamilyMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyMember.swift; sourceTree = "<group>"; };
+		5B2D8029236E1DFF001DA868 /* FamilyMemberAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyMemberAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				5B2D7FE5236DC42E001DA868 /* Customer.swift */,
+				5B2D8027236E1DC9001DA868 /* FamilyMember.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -227,8 +246,7 @@
 			children = (
 				5B2D8003236E0642001DA868 /* CustomerHeaderView.swift */,
 				5B2D8001236E0499001DA868 /* CustomerDetailViewController.swift */,
-				5B2D800A236E0FE1001DA868 /* InactiveMessageTableViewCell.swift */,
-				5B2D8016236E1435001DA868 /* TableViewBinder.swift */,
+				5B2D8018236E171C001DA868 /* Cells */,
 			);
 			path = CustomerDetailViewController;
 			sourceTree = "<group>";
@@ -249,6 +267,8 @@
 			children = (
 				5B2D8010236E1280001DA868 /* RowAdapter.swift */,
 				5B2D8014236E12C7001DA868 /* InactiveCustomerAdapter.swift */,
+				5B2D801F236E19D1001DA868 /* CustomerAdapter.swift */,
+				5B2D8029236E1DFF001DA868 /* FamilyMemberAdapter.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -258,8 +278,23 @@
 			children = (
 				5B2D800C236E11A5001DA868 /* RowViewModel.swift */,
 				5B2D800E236E11E3001DA868 /* InactiveMessageRowViewModel.swift */,
+				5B2D801D236E1990001DA868 /* TitleRowViewModel.swift */,
+				5B2D8021236E19DD001DA868 /* PersonalInformationRowViewModel.swift */,
+				5B2D8025236E1CB4001DA868 /* FamilyDependentRowViewModel.swift */,
 			);
 			path = RowViewModels;
+			sourceTree = "<group>";
+		};
+		5B2D8018236E171C001DA868 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5B2D8016236E1435001DA868 /* TableViewBinder.swift */,
+				5B2D800A236E0FE1001DA868 /* InactiveMessageTableViewCell.swift */,
+				5B2D8019236E173C001DA868 /* TitleTableViewCell.swift */,
+				5B2D801B236E18CD001DA868 /* PersonalInformationTableViewCell.swift */,
+				5B2D8023236E1BFD001DA868 /* FamilyDependentTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +399,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B2D800F236E11E3001DA868 /* InactiveMessageRowViewModel.swift in Sources */,
+				5B2D801C236E18CD001DA868 /* PersonalInformationTableViewCell.swift in Sources */,
+				5B2D8022236E19DD001DA868 /* PersonalInformationRowViewModel.swift in Sources */,
 				5B2D8017236E1435001DA868 /* TableViewBinder.swift in Sources */,
 				5B2D800D236E11A5001DA868 /* RowViewModel.swift in Sources */,
 				5B2D800B236E0FE1001DA868 /* InactiveMessageTableViewCell.swift in Sources */,
@@ -376,13 +413,20 @@
 				5B2D7FFE236DFF37001DA868 /* CustomerTableViewCellViewModel.swift in Sources */,
 				5B2D7FEA236DC496001DA868 /* CustomerListViewModel.swift in Sources */,
 				5B2D7FB3236DAAD2001DA868 /* AppDelegate.swift in Sources */,
+				5B2D802A236E1DFF001DA868 /* FamilyMemberAdapter.swift in Sources */,
+				5B2D8024236E1BFD001DA868 /* FamilyDependentTableViewCell.swift in Sources */,
 				5B2D7FEF236DC7BD001DA868 /* CustomerRemoteService.swift in Sources */,
 				5B2D8007236E0DDC001DA868 /* CustomerDetailViewModel.swift in Sources */,
 				5B2D8015236E12C7001DA868 /* InactiveCustomerAdapter.swift in Sources */,
+				5B2D801A236E173C001DA868 /* TitleTableViewCell.swift in Sources */,
 				5B2D7FF7236DC904001DA868 /* CustomerCoordinator.swift in Sources */,
 				5B2D7FDB236DAE32001DA868 /* UIView+AutoLayout.swift in Sources */,
+				5B2D801E236E1990001DA868 /* TitleRowViewModel.swift in Sources */,
 				5B2D7FB5236DAAD2001DA868 /* SceneDelegate.swift in Sources */,
 				5B2D8009236E0E71001DA868 /* CustomerHeaderViewModel.swift in Sources */,
+				5B2D8028236E1DC9001DA868 /* FamilyMember.swift in Sources */,
+				5B2D8026236E1CB4001DA868 /* FamilyDependentRowViewModel.swift in Sources */,
+				5B2D8020236E19D1001DA868 /* CustomerAdapter.swift in Sources */,
 				5B2D7FF5236DC8B2001DA868 /* Coordinator.swift in Sources */,
 				5B2D7FFC236DFD78001DA868 /* CustomerTableViewCell.swift in Sources */,
 				5B2D8002236E0499001DA868 /* CustomerDetailViewController.swift in Sources */,
