@@ -117,6 +117,7 @@ extension CustomerListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.customerSelected(at: indexPath.row)
     }
     
 }

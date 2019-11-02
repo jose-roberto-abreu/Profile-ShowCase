@@ -31,7 +31,9 @@ class CustomerCoordinator: Coordinator {
 extension CustomerCoordinator {
     
     func showCustomerDetail(for customer: Customer) {
+        let customerDetailViewController = CustomerDetailViewController()
         
+        rootViewController?.pushViewController(customerDetailViewController, animated: true)
     }
     
 }
