@@ -36,15 +36,13 @@ class CustomerService {
 class CustomerListViewModelTests: XCTestCase {
 
     func test_init_doesntStartLoadingData() {
-        let customerService = CustomerService()
-        let _ = CustomerListViewModel(customerService: customerService)
+        let (customerService, _) = makeSUT()
         
         XCTAssertEqual(customerService.receivedMessageCount, 0)
     }
     
     func test_loadCustomers_startLoadingData() {
-        let customerService = CustomerService()
-        let customerListViewModel = CustomerListViewModel(customerService: customerService)
+        let (customerService, customerListViewModel) = makeSUT()
     
         customerListViewModel.loadCustomers()
         
@@ -52,8 +50,7 @@ class CustomerListViewModelTests: XCTestCase {
     }
     
     func test_loadCustomer_notifyLoadingDataHasStarted() {
-        let customerService = CustomerService()
-        let customerListViewModel = CustomerListViewModel(customerService: customerService)
+        let (_, customerListViewModel) = makeSUT()
         
         let exp = expectation(description: "Wait for loading data notification")
         customerListViewModel.loadingDataHasStarted = {
@@ -62,6 +59,13 @@ class CustomerListViewModelTests: XCTestCase {
         customerListViewModel.loadCustomers()
         
         wait(for: [exp], timeout: 1.0)
+    }
+    
+    // MARK: - Helpers
+    func makeSUT() -> (CustomerService, CustomerListViewModel) {
+        let customerService = CustomerService()
+        let customerListViewModel = CustomerListViewModel(customerService: customerService)
+        return (customerService, customerListViewModel)
     }
     
 }
