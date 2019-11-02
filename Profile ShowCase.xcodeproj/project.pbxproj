@@ -17,6 +17,7 @@
 		5B2D7FE6236DC42E001DA868 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FE5236DC42E001DA868 /* Customer.swift */; };
 		5B2D7FEA236DC496001DA868 /* CustomerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FE9236DC496001DA868 /* CustomerListViewModel.swift */; };
 		5B2D7FED236DC522001DA868 /* CustomerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FEC236DC522001DA868 /* CustomerService.swift */; };
+		5B2D7FEF236DC7BD001DA868 /* CustomerRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FEE236DC7BD001DA868 /* CustomerRemoteService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		5B2D7FE5236DC42E001DA868 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		5B2D7FE9236DC496001DA868 /* CustomerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListViewModel.swift; sourceTree = "<group>"; };
 		5B2D7FEC236DC522001DA868 /* CustomerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerService.swift; sourceTree = "<group>"; };
+		5B2D7FEE236DC7BD001DA868 /* CustomerRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRemoteService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				5B2D7FEC236DC522001DA868 /* CustomerService.swift */,
+				5B2D7FEE236DC7BD001DA868 /* CustomerRemoteService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				5B2D7FE6236DC42E001DA868 /* Customer.swift in Sources */,
 				5B2D7FEA236DC496001DA868 /* CustomerListViewModel.swift in Sources */,
 				5B2D7FB3236DAAD2001DA868 /* AppDelegate.swift in Sources */,
+				5B2D7FEF236DC7BD001DA868 /* CustomerRemoteService.swift in Sources */,
 				5B2D7FDB236DAE32001DA868 /* UIView+AutoLayout.swift in Sources */,
 				5B2D7FB5236DAAD2001DA868 /* SceneDelegate.swift in Sources */,
 			);
