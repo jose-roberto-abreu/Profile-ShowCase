@@ -18,6 +18,8 @@
 		5B2D7FEA236DC496001DA868 /* CustomerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FE9236DC496001DA868 /* CustomerListViewModel.swift */; };
 		5B2D7FED236DC522001DA868 /* CustomerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FEC236DC522001DA868 /* CustomerService.swift */; };
 		5B2D7FEF236DC7BD001DA868 /* CustomerRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FEE236DC7BD001DA868 /* CustomerRemoteService.swift */; };
+		5B2D7FF5236DC8B2001DA868 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FF4236DC8B2001DA868 /* Coordinator.swift */; };
+		5B2D7FF7236DC904001DA868 /* CustomerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FF6236DC904001DA868 /* CustomerCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		5B2D7FE9236DC496001DA868 /* CustomerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListViewModel.swift; sourceTree = "<group>"; };
 		5B2D7FEC236DC522001DA868 /* CustomerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerService.swift; sourceTree = "<group>"; };
 		5B2D7FEE236DC7BD001DA868 /* CustomerRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRemoteService.swift; sourceTree = "<group>"; };
+		5B2D7FF4236DC8B2001DA868 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		5B2D7FF6236DC904001DA868 /* CustomerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 				5B2D7FE7236DC441001DA868 /* ViewModels */,
 				5B2D7FE4236DC422001DA868 /* Models */,
 				5B2D7FEB236DC4E7001DA868 /* Services */,
+				5B2D7FF3236DC89F001DA868 /* Coordinator */,
 				5B2D7FD9236DAE1E001DA868 /* Extensions */,
 				5B2D7FC0236DAAD3001DA868 /* Info.plist */,
 			);
@@ -159,6 +164,15 @@
 				5B2D7FEE236DC7BD001DA868 /* CustomerRemoteService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		5B2D7FF3236DC89F001DA868 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				5B2D7FF4236DC8B2001DA868 /* Coordinator.swift */,
+				5B2D7FF6236DC904001DA868 /* CustomerCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,8 +282,10 @@
 				5B2D7FEA236DC496001DA868 /* CustomerListViewModel.swift in Sources */,
 				5B2D7FB3236DAAD2001DA868 /* AppDelegate.swift in Sources */,
 				5B2D7FEF236DC7BD001DA868 /* CustomerRemoteService.swift in Sources */,
+				5B2D7FF7236DC904001DA868 /* CustomerCoordinator.swift in Sources */,
 				5B2D7FDB236DAE32001DA868 /* UIView+AutoLayout.swift in Sources */,
 				5B2D7FB5236DAAD2001DA868 /* SceneDelegate.swift in Sources */,
+				5B2D7FF5236DC8B2001DA868 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
