@@ -14,6 +14,9 @@
 		5B2D7FDB236DAE32001DA868 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FDA236DAE32001DA868 /* UIView+AutoLayout.swift */; };
 		5B2D7FDE236DAECC001DA868 /* CustomerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FDD236DAECC001DA868 /* CustomerListViewController.swift */; };
 		5B2D7FE3236DB1B8001DA868 /* CustomerListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FE2236DB1B8001DA868 /* CustomerListViewModelTests.swift */; };
+		5B2D7FE6236DC42E001DA868 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FE5236DC42E001DA868 /* Customer.swift */; };
+		5B2D7FEA236DC496001DA868 /* CustomerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FE9236DC496001DA868 /* CustomerListViewModel.swift */; };
+		5B2D7FED236DC522001DA868 /* CustomerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FEC236DC522001DA868 /* CustomerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,9 @@
 		5B2D7FDD236DAECC001DA868 /* CustomerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListViewController.swift; sourceTree = "<group>"; };
 		5B2D7FDF236DB0F2001DA868 /* Profile ShowCaseTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Profile ShowCaseTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		5B2D7FE2236DB1B8001DA868 /* CustomerListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListViewModelTests.swift; sourceTree = "<group>"; };
+		5B2D7FE5236DC42E001DA868 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		5B2D7FE9236DC496001DA868 /* CustomerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListViewModel.swift; sourceTree = "<group>"; };
+		5B2D7FEC236DC522001DA868 /* CustomerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +86,12 @@
 		5B2D7FB1236DAAD2001DA868 /* Profile ShowCase */ = {
 			isa = PBXGroup;
 			children = (
-				5B2D7FDC236DAE77001DA868 /* Controllers */,
+				5B2D7FE8236DC468001DA868 /* Supporting Files */,
+				5B2D7FDC236DAE77001DA868 /* Views */,
+				5B2D7FE7236DC441001DA868 /* ViewModels */,
+				5B2D7FE4236DC422001DA868 /* Models */,
+				5B2D7FEB236DC4E7001DA868 /* Services */,
 				5B2D7FD9236DAE1E001DA868 /* Extensions */,
-				5B2D7FB2236DAAD2001DA868 /* AppDelegate.swift */,
-				5B2D7FB4236DAAD2001DA868 /* SceneDelegate.swift */,
-				5B2D7FBB236DAAD3001DA868 /* Assets.xcassets */,
-				5B2D7FBD236DAAD3001DA868 /* LaunchScreen.storyboard */,
 				5B2D7FC0236DAAD3001DA868 /* Info.plist */,
 			);
 			path = "Profile ShowCase";
@@ -109,12 +115,47 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		5B2D7FDC236DAE77001DA868 /* Controllers */ = {
+		5B2D7FDC236DAE77001DA868 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				5B2D7FDD236DAECC001DA868 /* CustomerListViewController.swift */,
+				5B2D7FBB236DAAD3001DA868 /* Assets.xcassets */,
+				5B2D7FBD236DAAD3001DA868 /* LaunchScreen.storyboard */,
 			);
-			path = Controllers;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5B2D7FE4236DC422001DA868 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B2D7FE5236DC42E001DA868 /* Customer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5B2D7FE7236DC441001DA868 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5B2D7FE9236DC496001DA868 /* CustomerListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5B2D7FE8236DC468001DA868 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B2D7FB2236DAAD2001DA868 /* AppDelegate.swift */,
+				5B2D7FB4236DAAD2001DA868 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5B2D7FEB236DC4E7001DA868 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5B2D7FEC236DC522001DA868 /* CustomerService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +260,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B2D7FDE236DAECC001DA868 /* CustomerListViewController.swift in Sources */,
+				5B2D7FED236DC522001DA868 /* CustomerService.swift in Sources */,
+				5B2D7FE6236DC42E001DA868 /* Customer.swift in Sources */,
+				5B2D7FEA236DC496001DA868 /* CustomerListViewModel.swift in Sources */,
 				5B2D7FB3236DAAD2001DA868 /* AppDelegate.swift in Sources */,
 				5B2D7FDB236DAE32001DA868 /* UIView+AutoLayout.swift in Sources */,
 				5B2D7FB5236DAAD2001DA868 /* SceneDelegate.swift in Sources */,

@@ -7,62 +7,7 @@
 //
 
 import XCTest
-
-struct Customer {
-    
-}
-
-class CustomerListViewModel {
-    
-    var loadingDataHasStarted: (() -> Void)?
-    var loadingDataHasEnded: (() -> Void)?
-    var loadingDataHasFailed: ((Error) -> Void)?
-    var reload: (() -> Void)?
-    
-    private var customers: [Customer] = []
-    private let customerService: CustomerService
-    
-    init(customerService: CustomerService) {
-        self.customerService = customerService
-    }
-    
-    func loadCustomers() {
-        loadingDataHasStarted?()
-        customerService.customers { [weak self] response in
-            self?.loadingDataHasEnded?()
-            switch response {
-            case .failure(let error):
-                self?.loadingDataHasFailed?(error)
-            case .success(let customers):
-                self?.customers = customers
-            }
-            self?.reload?()
-        }
-    }
-    
-    func numberOfCustomers() -> Int {
-        return customers.count
-    }
-    
-}
-
-class CustomerService {
-    typealias CustomerResult = (Result<[Customer], Error>) -> Void
-    var receivedMessages: [CustomerResult] = []
-    
-    func customers(completion: @escaping CustomerResult) {
-        receivedMessages.append(completion)
-    }
-    
-    func completeWithError(_ error: NSError, at index: Int = 0) {
-        receivedMessages[index](.failure(error))
-    }
-    
-    func completeSucceed(with customers: [Customer], at index: Int = 0) {
-        receivedMessages[index](.success(customers))
-    }
-    
-}
+@testable import Profile_ShowCase
 
 class CustomerListViewModelTests: XCTestCase {
 
@@ -163,14 +108,30 @@ class CustomerListViewModelTests: XCTestCase {
     }
     
     // MARK: - Helpers
-    func makeSUT() -> (CustomerService, CustomerListViewModel) {
-        let customerService = CustomerService()
+    private func makeSUT() -> (CustomerServiceSpy, CustomerListViewModel) {
+        let customerService = CustomerServiceSpy()
         let customerListViewModel = CustomerListViewModel(customerService: customerService)
         return (customerService, customerListViewModel)
     }
     
-    func makeCustomer() -> Customer {
+    private func makeCustomer() -> Customer {
         return Customer()
+    }
+    
+    private class CustomerServiceSpy: CustomerService {
+        var receivedMessages: [CustomerResult] = []
+        
+        func customers(completion: @escaping CustomerResult) {
+            receivedMessages.append(completion)
+        }
+        
+        func completeWithError(_ error: NSError, at index: Int = 0) {
+            receivedMessages[index](.failure(error))
+        }
+        
+        func completeSucceed(with customers: [Customer], at index: Int = 0) {
+            receivedMessages[index](.success(customers))
+        }
     }
     
 }
