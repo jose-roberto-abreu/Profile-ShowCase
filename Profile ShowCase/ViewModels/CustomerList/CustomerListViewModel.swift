@@ -11,6 +11,7 @@ import Foundation
 class CustomerListViewModel {
     
     // MARK: - Public Vars
+    var customerHasBeenSelected: ((Customer) -> Void)?
     var loadingDataHasStarted: (() -> Void)?
     var loadingDataHasEnded: (() -> Void)?
     var loadingDataHasFailed: ((Error) -> Void)?
@@ -23,6 +24,16 @@ class CustomerListViewModel {
     // MARK: - Init
     init(customerService: CustomerService) {
         self.customerService = customerService
+    }
+    
+}
+
+// MARK: - Input Methods
+extension CustomerListViewModel {
+    
+    func customerSelected(at index: Int) {
+        let customerSelected = customers[index]
+        customerHasBeenSelected?(customerSelected)
     }
     
 }

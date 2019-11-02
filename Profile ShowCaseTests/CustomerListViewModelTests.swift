@@ -107,6 +107,26 @@ class CustomerListViewModelTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
+    func test_whenCustomerIsSelected_observerIsNotify() {
+        let (customerService, customerListViewModel) = makeSUT()
+        let customers = [makeCustomer()]
+        
+        customerListViewModel.loadCustomers()
+        customerService.completeSucceed(with: customers)
+        
+        let exp = expectation(description: "Wait for notification")
+        var receivedCustomer: Customer!
+        customerListViewModel.customerHasBeenSelected = { customer in
+            receivedCustomer = customer
+            exp.fulfill()
+        }
+        customerListViewModel.customerSelected(at: 0)
+        
+        wait(for: [exp], timeout: 1.0)
+        
+        XCTAssertEqual(receivedCustomer, customers[0])
+    }
+    
     // MARK: - Helpers
     private func makeSUT() -> (CustomerServiceSpy, CustomerListViewModel) {
         let customerService = CustomerServiceSpy()

@@ -51,7 +51,7 @@ extension CustomerListViewController {
         }
         
         viewModel.loadingDataHasFailed = { _ in
-            
+            // Display Error
         }
         
         viewModel.reload = { [weak self] in

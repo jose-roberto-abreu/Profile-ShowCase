@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Customer {
+struct Customer: Equatable {
     let name: String
     let profilePicture: String
     let isInactive: Bool
