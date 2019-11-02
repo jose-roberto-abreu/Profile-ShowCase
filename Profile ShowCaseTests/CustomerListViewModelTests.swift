@@ -22,16 +22,16 @@ class CustomerListViewModel {
     
     func loadCustomers() {
         loadingDataHasStarted?()
-        customerService.customers { [weak self] in
+        customerService.customers { [weak self] error in
             self?.loadingDataHasEnded?()
-            self?.loadingDataHasFailed?(NSError(domain: "any-error", code: -1))
+            self?.loadingDataHasFailed?(error)
         }
     }
     
 }
 
 class CustomerService {
-    typealias CustomerResult = () -> Void
+    typealias CustomerResult = (Error) -> Void
     var receivedMessages: [CustomerResult] = []
     
     func customers(completion: @escaping CustomerResult) {
@@ -39,7 +39,7 @@ class CustomerService {
     }
     
     func completeWithError(_ error: NSError, at index: Int = 0) {
-        receivedMessages[index]()
+        receivedMessages[index](error)
     }
     
 }
