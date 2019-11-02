@@ -10,14 +10,24 @@ import XCTest
 
 class CustomerListViewModel {
     
+    private let customerService: CustomerService
+    
     init(customerService: CustomerService) {
-        
+        self.customerService = customerService
+    }
+    
+    func loadCustomers() {
+        customerService.customers()
     }
     
 }
 
 class CustomerService {
     var receivedMessageCount: Int = 0
+    
+    func customers() {
+        receivedMessageCount += 1
+    }
 }
 
 class CustomerListViewModelTests: XCTestCase {
@@ -28,5 +38,15 @@ class CustomerListViewModelTests: XCTestCase {
         
         XCTAssertEqual(customerService.receivedMessageCount, 0)
     }
-
+    
+    func test_loadCustomers_startLoadingData() {
+        let customerService = CustomerService()
+        let customerListViewModel = CustomerListViewModel(customerService: customerService)
+    
+        customerListViewModel.loadCustomers()
+        
+        XCTAssertEqual(customerService.receivedMessageCount, 1)
+    }
+    
 }
+
