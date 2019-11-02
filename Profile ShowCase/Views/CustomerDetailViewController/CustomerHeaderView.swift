@@ -11,6 +11,13 @@ import UIKit
 class CustomerHeaderView: UIView {
     
     // MARK: - Public Vars
+    var viewModel: CustomerHeaderViewModel? {
+        didSet {
+            profileImageView.image = UIImage(named: viewModel?.profilePicture ?? "")
+            nameLabel.text = viewModel?.name
+            roleLabel.text = viewModel?.role
+        }
+    }
     
     // MARK: - Private Vars
     private let profileImageView = UIImageView.autoLayout()
@@ -40,18 +47,15 @@ class CustomerHeaderView: UIView {
 extension CustomerHeaderView {
     
     func setupViews() {
-        profileImageView.image = UIImage(named: "ellen_profile")
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.clipsToBounds = true
         
         bottomGradient.image = UIImage(named: "bottom_gradient")
         
         nameLabel.font = .boldSystemFont(ofSize: 19.0)
-        nameLabel.text = "Ellen Fergusen"
         nameLabel.textColor = .white
         
         roleLabel.font = .systemFont(ofSize: 17.0)
-        roleLabel.text = "Customer"
         roleLabel.textColor = .white
         
         addSubview(profileImageView)

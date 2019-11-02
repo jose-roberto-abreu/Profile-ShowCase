@@ -19,7 +19,17 @@ class CustomerDetailViewController: UIViewController {
         return CustomerHeaderView(frame: CGRect(x: 0, y: 0, width: 0, height: 320.0))
     }()
     
+    private let viewModel: CustomerDetailViewModel
+    
     // MARK: - Init
+    init(viewModel: CustomerDetailViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -35,6 +45,8 @@ extension CustomerDetailViewController {
     
     func setupViews() {
         title = "Profile"
+        
+        customerHeaderView.viewModel = viewModel.makeCustomerHeaderViewModel()
         
         tableView.tableHeaderView = customerHeaderView
         tableView.dataSource = self

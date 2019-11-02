@@ -25,6 +25,8 @@
 		5B2D7FFE236DFF37001DA868 /* CustomerTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FFD236DFF37001DA868 /* CustomerTableViewCellViewModel.swift */; };
 		5B2D8002236E0499001DA868 /* CustomerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8001236E0499001DA868 /* CustomerDetailViewController.swift */; };
 		5B2D8004236E0642001DA868 /* CustomerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8003236E0642001DA868 /* CustomerHeaderView.swift */; };
+		5B2D8007236E0DDC001DA868 /* CustomerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8006236E0DDC001DA868 /* CustomerDetailViewModel.swift */; };
+		5B2D8009236E0E71001DA868 /* CustomerHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8008236E0E71001DA868 /* CustomerHeaderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		5B2D7FFD236DFF37001DA868 /* CustomerTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		5B2D8001236E0499001DA868 /* CustomerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailViewController.swift; sourceTree = "<group>"; };
 		5B2D8003236E0642001DA868 /* CustomerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHeaderView.swift; sourceTree = "<group>"; };
+		5B2D8006236E0DDC001DA868 /* CustomerDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailViewModel.swift; sourceTree = "<group>"; };
+		5B2D8008236E0E71001DA868 /* CustomerHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHeaderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +159,8 @@
 		5B2D7FE7236DC441001DA868 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				5B2D7FFF236DFF8B001DA868 /* CustomerList */,
+				5B2D7FFF236DFF8B001DA868 /* Customer List */,
+				5B2D8005236E0DBF001DA868 /* Customer Detail */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -196,13 +201,13 @@
 			path = CustomerListViewController;
 			sourceTree = "<group>";
 		};
-		5B2D7FFF236DFF8B001DA868 /* CustomerList */ = {
+		5B2D7FFF236DFF8B001DA868 /* Customer List */ = {
 			isa = PBXGroup;
 			children = (
 				5B2D7FE9236DC496001DA868 /* CustomerListViewModel.swift */,
 				5B2D7FFD236DFF37001DA868 /* CustomerTableViewCellViewModel.swift */,
 			);
-			path = CustomerList;
+			path = "Customer List";
 			sourceTree = "<group>";
 		};
 		5B2D8000236E0482001DA868 /* CustomerDetailViewController */ = {
@@ -212,6 +217,15 @@
 				5B2D8001236E0499001DA868 /* CustomerDetailViewController.swift */,
 			);
 			path = CustomerDetailViewController;
+			sourceTree = "<group>";
+		};
+		5B2D8005236E0DBF001DA868 /* Customer Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5B2D8008236E0E71001DA868 /* CustomerHeaderViewModel.swift */,
+				5B2D8006236E0DDC001DA868 /* CustomerDetailViewModel.swift */,
+			);
+			path = "Customer Detail";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,9 +338,11 @@
 				5B2D7FEA236DC496001DA868 /* CustomerListViewModel.swift in Sources */,
 				5B2D7FB3236DAAD2001DA868 /* AppDelegate.swift in Sources */,
 				5B2D7FEF236DC7BD001DA868 /* CustomerRemoteService.swift in Sources */,
+				5B2D8007236E0DDC001DA868 /* CustomerDetailViewModel.swift in Sources */,
 				5B2D7FF7236DC904001DA868 /* CustomerCoordinator.swift in Sources */,
 				5B2D7FDB236DAE32001DA868 /* UIView+AutoLayout.swift in Sources */,
 				5B2D7FB5236DAAD2001DA868 /* SceneDelegate.swift in Sources */,
+				5B2D8009236E0E71001DA868 /* CustomerHeaderViewModel.swift in Sources */,
 				5B2D7FF5236DC8B2001DA868 /* Coordinator.swift in Sources */,
 				5B2D7FFC236DFD78001DA868 /* CustomerTableViewCell.swift in Sources */,
 				5B2D8002236E0499001DA868 /* CustomerDetailViewController.swift in Sources */,
