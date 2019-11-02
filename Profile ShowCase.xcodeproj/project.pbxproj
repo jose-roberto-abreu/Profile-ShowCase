@@ -11,7 +11,6 @@
 		5B2D7FB5236DAAD2001DA868 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FB4236DAAD2001DA868 /* SceneDelegate.swift */; };
 		5B2D7FBC236DAAD3001DA868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2D7FBB236DAAD3001DA868 /* Assets.xcassets */; };
 		5B2D7FBF236DAAD3001DA868 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2D7FBD236DAAD3001DA868 /* LaunchScreen.storyboard */; };
-		5B2D7FCA236DAAD3001DA868 /* Profile_ShowCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FC9236DAAD3001DA868 /* Profile_ShowCaseTests.swift */; };
 		5B2D7FDB236DAE32001DA868 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FDA236DAE32001DA868 /* UIView+AutoLayout.swift */; };
 		5B2D7FDE236DAECC001DA868 /* CustomerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FDD236DAECC001DA868 /* CustomerListViewController.swift */; };
 /* End PBXBuildFile section */
@@ -34,7 +33,6 @@
 		5B2D7FBE236DAAD3001DA868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B2D7FC0236DAAD3001DA868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B2D7FC5236DAAD3001DA868 /* Profile ShowCaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Profile ShowCaseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B2D7FC9236DAAD3001DA868 /* Profile_ShowCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile_ShowCaseTests.swift; sourceTree = "<group>"; };
 		5B2D7FCB236DAAD3001DA868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B2D7FDA236DAE32001DA868 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		5B2D7FDD236DAECC001DA868 /* CustomerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListViewController.swift; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 		5B2D7FC8236DAAD3001DA868 /* Profile ShowCaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				5B2D7FC9236DAAD3001DA868 /* Profile_ShowCaseTests.swift */,
 				5B2D7FCB236DAAD3001DA868 /* Info.plist */,
 			);
 			path = "Profile ShowCaseTests";
@@ -226,7 +223,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B2D7FCA236DAAD3001DA868 /* Profile_ShowCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
