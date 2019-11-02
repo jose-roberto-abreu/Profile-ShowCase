@@ -13,6 +13,7 @@
 		5B2D7FBF236DAAD3001DA868 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2D7FBD236DAAD3001DA868 /* LaunchScreen.storyboard */; };
 		5B2D7FDB236DAE32001DA868 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FDA236DAE32001DA868 /* UIView+AutoLayout.swift */; };
 		5B2D7FDE236DAECC001DA868 /* CustomerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FDD236DAECC001DA868 /* CustomerListViewController.swift */; };
+		5B2D7FE3236DB1B8001DA868 /* CustomerListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FE2236DB1B8001DA868 /* CustomerListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,8 @@
 		5B2D7FCB236DAAD3001DA868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B2D7FDA236DAE32001DA868 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		5B2D7FDD236DAECC001DA868 /* CustomerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListViewController.swift; sourceTree = "<group>"; };
+		5B2D7FDF236DB0F2001DA868 /* Profile ShowCaseTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Profile ShowCaseTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		5B2D7FE2236DB1B8001DA868 /* CustomerListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				5B2D7FCB236DAAD3001DA868 /* Info.plist */,
+				5B2D7FDF236DB0F2001DA868 /* Profile ShowCaseTests-Bridging-Header.h */,
+				5B2D7FE2236DB1B8001DA868 /* CustomerListViewModelTests.swift */,
 			);
 			path = "Profile ShowCaseTests";
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 					};
 					5B2D7FC4236DAAD3001DA868 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 						TestTargetID = 5B2D7FAE236DAAD2001DA868;
 					};
 				};
@@ -223,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B2D7FE3236DB1B8001DA868 /* CustomerListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +410,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5YC7W23MH4;
 				INFOPLIST_FILE = "Profile ShowCaseTests/Info.plist";
@@ -414,6 +422,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.homeappzz.Profile-ShowCaseTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Profile ShowCaseTests/Profile ShowCaseTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Profile ShowCase.app/Profile ShowCase";
@@ -425,6 +435,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5YC7W23MH4;
 				INFOPLIST_FILE = "Profile ShowCaseTests/Info.plist";
@@ -436,6 +447,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.homeappzz.Profile-ShowCaseTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Profile ShowCaseTests/Profile ShowCaseTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Profile ShowCase.app/Profile ShowCase";
