@@ -8,12 +8,18 @@
 
 import XCTest
 
+struct Customer {
+    
+}
+
 class CustomerListViewModel {
     
     var loadingDataHasStarted: (() -> Void)?
     var loadingDataHasEnded: (() -> Void)?
     var loadingDataHasFailed: ((Error) -> Void)?
+    var reload: (() -> Void)?
     
+    private var customers: [Customer] = []
     private let customerService: CustomerService
     
     init(customerService: CustomerService) {
@@ -22,16 +28,26 @@ class CustomerListViewModel {
     
     func loadCustomers() {
         loadingDataHasStarted?()
-        customerService.customers { [weak self] error in
+        customerService.customers { [weak self] response in
             self?.loadingDataHasEnded?()
-            self?.loadingDataHasFailed?(error)
+            switch response {
+            case .failure(let error):
+                self?.loadingDataHasFailed?(error)
+            case .success(let customers):
+                self?.customers = customers
+            }
+            self?.reload?()
         }
+    }
+    
+    func numberOfCustomers() -> Int {
+        return customers.count
     }
     
 }
 
 class CustomerService {
-    typealias CustomerResult = (Error) -> Void
+    typealias CustomerResult = (Result<[Customer], Error>) -> Void
     var receivedMessages: [CustomerResult] = []
     
     func customers(completion: @escaping CustomerResult) {
@@ -39,7 +55,11 @@ class CustomerService {
     }
     
     func completeWithError(_ error: NSError, at index: Int = 0) {
-        receivedMessages[index](error)
+        receivedMessages[index](.failure(error))
+    }
+    
+    func completeSucceed(with customers: [Customer], at index: Int = 0) {
+        receivedMessages[index](.success(customers))
     }
     
 }
@@ -104,11 +124,53 @@ class CustomerListViewModelTests: XCTestCase {
         XCTAssertEqual(receivedError, error)
     }
     
+    func test_loadCustomer_receivedDataWhenSucceded() {
+        let (customerService, customerListViewModel) = makeSUT()
+        let customers = [makeCustomer(), makeCustomer(), makeCustomer()]
+        
+        customerListViewModel.loadCustomers()
+        customerService.completeSucceed(with: customers)
+        
+        XCTAssertEqual(customerListViewModel.numberOfCustomers(), 3)
+    }
+    
+    func test_loadCustomer_notifyToReloadWhenErrorReceived() {
+        let (customerService, customerListViewModel) = makeSUT()
+        let error = NSError(domain: "any-error", code: -1)
+    
+        let exp = expectation(description: "Wait for loading data notification")
+        customerListViewModel.reload = {
+            exp.fulfill()
+        }
+        customerListViewModel.loadCustomers()
+        customerService.completeWithError(error)
+        
+        wait(for: [exp], timeout: 1.0)
+    }
+    
+    func test_loadCustomer_notifyToReloadWhenSucceded() {
+        let (customerService, customerListViewModel) = makeSUT()
+        let customers = [makeCustomer(), makeCustomer(), makeCustomer()]
+        
+        let exp = expectation(description: "Wait for loading data notification")
+        customerListViewModel.reload = {
+            exp.fulfill()
+        }
+        customerListViewModel.loadCustomers()
+        customerService.completeSucceed(with: customers)
+        
+        wait(for: [exp], timeout: 1.0)
+    }
+    
     // MARK: - Helpers
     func makeSUT() -> (CustomerService, CustomerListViewModel) {
         let customerService = CustomerService()
         let customerListViewModel = CustomerListViewModel(customerService: customerService)
         return (customerService, customerListViewModel)
+    }
+    
+    func makeCustomer() -> Customer {
+        return Customer()
     }
     
 }
