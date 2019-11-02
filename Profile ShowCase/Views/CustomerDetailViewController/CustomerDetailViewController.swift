@@ -15,6 +15,10 @@ class CustomerDetailViewController: UIViewController {
     // MARK: - Private Vars
     private let tableView = UITableView.autoLayout()
     
+    private lazy var customerHeaderView: CustomerHeaderView = {
+        return CustomerHeaderView(frame: CGRect(x: 0, y: 0, width: 0, height: 320.0))
+    }()
+    
     // MARK: - Init
     
     // MARK: - View Lifecycle
@@ -32,6 +36,7 @@ extension CustomerDetailViewController {
     func setupViews() {
         title = "Profile"
         
+        tableView.tableHeaderView = customerHeaderView
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView()

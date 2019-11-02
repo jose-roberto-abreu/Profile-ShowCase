@@ -24,6 +24,7 @@
 		5B2D7FFC236DFD78001DA868 /* CustomerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FFB236DFD78001DA868 /* CustomerTableViewCell.swift */; };
 		5B2D7FFE236DFF37001DA868 /* CustomerTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FFD236DFF37001DA868 /* CustomerTableViewCellViewModel.swift */; };
 		5B2D8002236E0499001DA868 /* CustomerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8001236E0499001DA868 /* CustomerDetailViewController.swift */; };
+		5B2D8004236E0642001DA868 /* CustomerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8003236E0642001DA868 /* CustomerHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		5B2D7FFB236DFD78001DA868 /* CustomerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTableViewCell.swift; sourceTree = "<group>"; };
 		5B2D7FFD236DFF37001DA868 /* CustomerTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		5B2D8001236E0499001DA868 /* CustomerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailViewController.swift; sourceTree = "<group>"; };
+		5B2D8003236E0642001DA868 /* CustomerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 		5B2D8000236E0482001DA868 /* CustomerDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5B2D8003236E0642001DA868 /* CustomerHeaderView.swift */,
 				5B2D8001236E0499001DA868 /* CustomerDetailViewController.swift */,
 			);
 			path = CustomerDetailViewController;
@@ -316,6 +319,7 @@
 				5B2D7FED236DC522001DA868 /* CustomerService.swift in Sources */,
 				5B2D7FE6236DC42E001DA868 /* Customer.swift in Sources */,
 				5B2D7FF9236DFC32001DA868 /* UITableView+Dequeue.swift in Sources */,
+				5B2D8004236E0642001DA868 /* CustomerHeaderView.swift in Sources */,
 				5B2D7FFE236DFF37001DA868 /* CustomerTableViewCellViewModel.swift in Sources */,
 				5B2D7FEA236DC496001DA868 /* CustomerListViewModel.swift in Sources */,
 				5B2D7FB3236DAAD2001DA868 /* AppDelegate.swift in Sources */,
