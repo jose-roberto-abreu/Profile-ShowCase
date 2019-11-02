@@ -11,6 +11,7 @@ import XCTest
 class CustomerListViewModel {
     
     var loadingDataHasStarted: (() -> Void)?
+    var loadingDataHasEnded: (() -> Void)?
     
     private let customerService: CustomerService
     
@@ -20,17 +21,25 @@ class CustomerListViewModel {
     
     func loadCustomers() {
         loadingDataHasStarted?()
-        customerService.customers()
+        customerService.customers { [weak self] in
+            self?.loadingDataHasEnded?()
+        }
     }
     
 }
 
 class CustomerService {
-    var receivedMessageCount: Int = 0
+    typealias CustomerResult = () -> Void
+    var receivedMessages: [CustomerResult] = []
     
-    func customers() {
-        receivedMessageCount += 1
+    func customers(completion: @escaping CustomerResult) {
+        receivedMessages.append(completion)
     }
+    
+    func completeWithError(_ error: NSError, at index: Int = 0) {
+        receivedMessages[index]()
+    }
+    
 }
 
 class CustomerListViewModelTests: XCTestCase {
@@ -38,7 +47,7 @@ class CustomerListViewModelTests: XCTestCase {
     func test_init_doesntStartLoadingData() {
         let (customerService, _) = makeSUT()
         
-        XCTAssertEqual(customerService.receivedMessageCount, 0)
+        XCTAssertEqual(customerService.receivedMessages.count, 0)
     }
     
     func test_loadCustomers_startLoadingData() {
@@ -46,7 +55,7 @@ class CustomerListViewModelTests: XCTestCase {
     
         customerListViewModel.loadCustomers()
         
-        XCTAssertEqual(customerService.receivedMessageCount, 1)
+        XCTAssertEqual(customerService.receivedMessages.count, 1)
     }
     
     func test_loadCustomer_notifyLoadingDataHasStarted() {
@@ -57,6 +66,20 @@ class CustomerListViewModelTests: XCTestCase {
             exp.fulfill()
         }
         customerListViewModel.loadCustomers()
+        
+        wait(for: [exp], timeout: 1.0)
+    }
+    
+    func test_loadCustomer_notifyLoadingDataHasEndedWhenResponseReceived() {
+        let (customerService, customerListViewModel) = makeSUT()
+        let error = NSError(domain: "any-error", code: -1)
+        
+        let exp = expectation(description: "Wait for loading data notification")
+        customerListViewModel.loadingDataHasEnded = {
+            exp.fulfill()
+        }
+        customerListViewModel.loadCustomers()
+        customerService.completeWithError(error)
         
         wait(for: [exp], timeout: 1.0)
     }
