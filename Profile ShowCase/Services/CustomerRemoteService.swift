@@ -11,8 +11,14 @@ import Foundation
 class CustomerRemoteService: CustomerService {
     
     func customers(completion: @escaping CustomerResult) {
-        let customers = [Customer(), Customer(), Customer()]
+        let customers = [makeCustomer(name: "José Abreu", profilePicture: "", isInactive: true), // Inactive
+                         makeCustomer(name: "José Abreu", profilePicture: ""), // Depedents
+                         makeCustomer(name: "José Abreu", profilePicture: "")] // Normal
         completion(.success(customers))
+    }
+    
+    private func makeCustomer(name: String, profilePicture: String, isInactive: Bool = false) -> Customer {
+        return Customer(name: name, profilePicture: profilePicture, isInactive: isInactive)
     }
     
 }

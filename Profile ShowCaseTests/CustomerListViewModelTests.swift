@@ -115,7 +115,7 @@ class CustomerListViewModelTests: XCTestCase {
     }
     
     private func makeCustomer() -> Customer {
-        return Customer()
+        return Customer(name: "any-name", profilePicture: "any-picture", isInactive: false)
     }
     
     private class CustomerServiceSpy: CustomerService {

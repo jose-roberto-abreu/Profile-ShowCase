@@ -9,5 +9,7 @@
 import Foundation
 
 struct Customer {
-    
+    let name: String
+    let profilePicture: String
+    let isInactive: Bool
 }
