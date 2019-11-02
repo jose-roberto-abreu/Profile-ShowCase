@@ -10,6 +10,8 @@ import XCTest
 
 class CustomerListViewModel {
     
+    var loadingDataHasStarted: (() -> Void)?
+    
     private let customerService: CustomerService
     
     init(customerService: CustomerService) {
@@ -17,6 +19,7 @@ class CustomerListViewModel {
     }
     
     func loadCustomers() {
+        loadingDataHasStarted?()
         customerService.customers()
     }
     
@@ -46,6 +49,19 @@ class CustomerListViewModelTests: XCTestCase {
         customerListViewModel.loadCustomers()
         
         XCTAssertEqual(customerService.receivedMessageCount, 1)
+    }
+    
+    func test_loadCustomer_notifyLoadingDataHasStarted() {
+        let customerService = CustomerService()
+        let customerListViewModel = CustomerListViewModel(customerService: customerService)
+        
+        let exp = expectation(description: "Wait for loading data notification")
+        customerListViewModel.loadingDataHasStarted = {
+            exp.fulfill()
+        }
+        customerListViewModel.loadCustomers()
+        
+        wait(for: [exp], timeout: 1.0)
     }
     
 }
