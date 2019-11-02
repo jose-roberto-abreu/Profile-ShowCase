@@ -12,6 +12,7 @@ class CustomerListViewModel {
     
     var loadingDataHasStarted: (() -> Void)?
     var loadingDataHasEnded: (() -> Void)?
+    var loadingDataHasFailed: ((Error) -> Void)?
     
     private let customerService: CustomerService
     
@@ -23,6 +24,7 @@ class CustomerListViewModel {
         loadingDataHasStarted?()
         customerService.customers { [weak self] in
             self?.loadingDataHasEnded?()
+            self?.loadingDataHasFailed?(NSError(domain: "any-error", code: -1))
         }
     }
     
@@ -82,6 +84,24 @@ class CustomerListViewModelTests: XCTestCase {
         customerService.completeWithError(error)
         
         wait(for: [exp], timeout: 1.0)
+    }
+    
+    func test_loadCustomer_notifyLoadingDataHasFailedWhenAnErrorOcurred() {
+        let (customerService, customerListViewModel) = makeSUT()
+        let error = NSError(domain: "any-error", code: -1)
+        
+        let exp = expectation(description: "Wait for loading data notification")
+        
+        var receivedError: NSError?
+        customerListViewModel.loadingDataHasFailed = { error in
+            receivedError = error as NSError
+            exp.fulfill()
+        }
+        customerListViewModel.loadCustomers()
+        customerService.completeWithError(error)
+        
+        wait(for: [exp], timeout: 1.0)
+        XCTAssertEqual(receivedError, error)
     }
     
     // MARK: - Helpers
