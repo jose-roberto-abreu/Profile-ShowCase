@@ -15,10 +15,23 @@ class CustomerCoordinator: Coordinator {
     
     func setupRootViewController() {
         let customerListViewModel = CustomerListViewModel(customerService: makeCustomerService())
+        customerListViewModel.customerHasBeenSelected = { [weak self] customer in
+            self?.showCustomerDetail(for: customer)
+        }
+        
         let customerListViewController = CustomerListViewController(viewModel: customerListViewModel)
         
         let navigationController = UINavigationController(rootViewController: customerListViewController)
         rootViewController = navigationController
+    }
+    
+}
+
+// MARK: - Flow
+extension CustomerCoordinator {
+    
+    func showCustomerDetail(for customer: Customer) {
+        
     }
     
 }
