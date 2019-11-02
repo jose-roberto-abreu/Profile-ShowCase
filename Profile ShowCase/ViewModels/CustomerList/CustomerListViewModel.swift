@@ -34,6 +34,11 @@ extension CustomerListViewModel {
         return customers.count
     }
     
+    func makeCustomerTableViewCellViewModel(at index: Int) -> CustomerTableViewCellViewModel {
+        let customer = customers[index]
+        return CustomerTableViewCellViewModel(customer: customer)
+    }
+    
 }
 
 // MARK: - Services

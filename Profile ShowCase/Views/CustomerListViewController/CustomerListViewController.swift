@@ -105,7 +105,9 @@ extension CustomerListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.getCell(type: CustomerTableViewCell.self)
+        cell.viewModel = viewModel.makeCustomerTableViewCellViewModel(at: indexPath.row)
+        return cell
     }
     
 }
@@ -114,7 +116,7 @@ extension CustomerListViewController: UITableViewDataSource {
 extension CustomerListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }

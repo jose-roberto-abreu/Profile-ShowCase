@@ -21,6 +21,8 @@
 		5B2D7FF5236DC8B2001DA868 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FF4236DC8B2001DA868 /* Coordinator.swift */; };
 		5B2D7FF7236DC904001DA868 /* CustomerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FF6236DC904001DA868 /* CustomerCoordinator.swift */; };
 		5B2D7FF9236DFC32001DA868 /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FF8236DFC32001DA868 /* UITableView+Dequeue.swift */; };
+		5B2D7FFC236DFD78001DA868 /* CustomerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FFB236DFD78001DA868 /* CustomerTableViewCell.swift */; };
+		5B2D7FFE236DFF37001DA868 /* CustomerTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D7FFD236DFF37001DA868 /* CustomerTableViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		5B2D7FF4236DC8B2001DA868 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		5B2D7FF6236DC904001DA868 /* CustomerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCoordinator.swift; sourceTree = "<group>"; };
 		5B2D7FF8236DFC32001DA868 /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeue.swift"; sourceTree = "<group>"; };
+		5B2D7FFB236DFD78001DA868 /* CustomerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTableViewCell.swift; sourceTree = "<group>"; };
+		5B2D7FFD236DFF37001DA868 /* CustomerTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTableViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +132,7 @@
 		5B2D7FDC236DAE77001DA868 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5B2D7FDD236DAECC001DA868 /* CustomerListViewController.swift */,
+				5B2D7FFA236DFD62001DA868 /* CustomerListViewController */,
 				5B2D7FBB236DAAD3001DA868 /* Assets.xcassets */,
 				5B2D7FBD236DAAD3001DA868 /* LaunchScreen.storyboard */,
 			);
@@ -146,7 +150,7 @@
 		5B2D7FE7236DC441001DA868 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				5B2D7FE9236DC496001DA868 /* CustomerListViewModel.swift */,
+				5B2D7FFF236DFF8B001DA868 /* CustomerList */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -176,6 +180,24 @@
 				5B2D7FF6236DC904001DA868 /* CustomerCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		5B2D7FFA236DFD62001DA868 /* CustomerListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5B2D7FDD236DAECC001DA868 /* CustomerListViewController.swift */,
+				5B2D7FFB236DFD78001DA868 /* CustomerTableViewCell.swift */,
+			);
+			path = CustomerListViewController;
+			sourceTree = "<group>";
+		};
+		5B2D7FFF236DFF8B001DA868 /* CustomerList */ = {
+			isa = PBXGroup;
+			children = (
+				5B2D7FE9236DC496001DA868 /* CustomerListViewModel.swift */,
+				5B2D7FFD236DFF37001DA868 /* CustomerTableViewCellViewModel.swift */,
+			);
+			path = CustomerList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +305,7 @@
 				5B2D7FED236DC522001DA868 /* CustomerService.swift in Sources */,
 				5B2D7FE6236DC42E001DA868 /* Customer.swift in Sources */,
 				5B2D7FF9236DFC32001DA868 /* UITableView+Dequeue.swift in Sources */,
+				5B2D7FFE236DFF37001DA868 /* CustomerTableViewCellViewModel.swift in Sources */,
 				5B2D7FEA236DC496001DA868 /* CustomerListViewModel.swift in Sources */,
 				5B2D7FB3236DAAD2001DA868 /* AppDelegate.swift in Sources */,
 				5B2D7FEF236DC7BD001DA868 /* CustomerRemoteService.swift in Sources */,
@@ -290,6 +313,7 @@
 				5B2D7FDB236DAE32001DA868 /* UIView+AutoLayout.swift in Sources */,
 				5B2D7FB5236DAAD2001DA868 /* SceneDelegate.swift in Sources */,
 				5B2D7FF5236DC8B2001DA868 /* Coordinator.swift in Sources */,
+				5B2D7FFC236DFD78001DA868 /* CustomerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
