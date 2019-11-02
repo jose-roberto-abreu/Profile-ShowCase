@@ -27,6 +27,12 @@
 		5B2D8004236E0642001DA868 /* CustomerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8003236E0642001DA868 /* CustomerHeaderView.swift */; };
 		5B2D8007236E0DDC001DA868 /* CustomerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8006236E0DDC001DA868 /* CustomerDetailViewModel.swift */; };
 		5B2D8009236E0E71001DA868 /* CustomerHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8008236E0E71001DA868 /* CustomerHeaderViewModel.swift */; };
+		5B2D800B236E0FE1001DA868 /* InactiveMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D800A236E0FE1001DA868 /* InactiveMessageTableViewCell.swift */; };
+		5B2D800D236E11A5001DA868 /* RowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D800C236E11A5001DA868 /* RowViewModel.swift */; };
+		5B2D800F236E11E3001DA868 /* InactiveMessageRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D800E236E11E3001DA868 /* InactiveMessageRowViewModel.swift */; };
+		5B2D8011236E1280001DA868 /* RowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8010236E1280001DA868 /* RowAdapter.swift */; };
+		5B2D8015236E12C7001DA868 /* InactiveCustomerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8014236E12C7001DA868 /* InactiveCustomerAdapter.swift */; };
+		5B2D8017236E1435001DA868 /* TableViewBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D8016236E1435001DA868 /* TableViewBinder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,12 @@
 		5B2D8003236E0642001DA868 /* CustomerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHeaderView.swift; sourceTree = "<group>"; };
 		5B2D8006236E0DDC001DA868 /* CustomerDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailViewModel.swift; sourceTree = "<group>"; };
 		5B2D8008236E0E71001DA868 /* CustomerHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHeaderViewModel.swift; sourceTree = "<group>"; };
+		5B2D800A236E0FE1001DA868 /* InactiveMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactiveMessageTableViewCell.swift; sourceTree = "<group>"; };
+		5B2D800C236E11A5001DA868 /* RowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewModel.swift; sourceTree = "<group>"; };
+		5B2D800E236E11E3001DA868 /* InactiveMessageRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactiveMessageRowViewModel.swift; sourceTree = "<group>"; };
+		5B2D8010236E1280001DA868 /* RowAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowAdapter.swift; sourceTree = "<group>"; };
+		5B2D8014236E12C7001DA868 /* InactiveCustomerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactiveCustomerAdapter.swift; sourceTree = "<group>"; };
+		5B2D8016236E1435001DA868 /* TableViewBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewBinder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +227,8 @@
 			children = (
 				5B2D8003236E0642001DA868 /* CustomerHeaderView.swift */,
 				5B2D8001236E0499001DA868 /* CustomerDetailViewController.swift */,
+				5B2D800A236E0FE1001DA868 /* InactiveMessageTableViewCell.swift */,
+				5B2D8016236E1435001DA868 /* TableViewBinder.swift */,
 			);
 			path = CustomerDetailViewController;
 			sourceTree = "<group>";
@@ -224,8 +238,28 @@
 			children = (
 				5B2D8008236E0E71001DA868 /* CustomerHeaderViewModel.swift */,
 				5B2D8006236E0DDC001DA868 /* CustomerDetailViewModel.swift */,
+				5B2D8013236E1290001DA868 /* RowViewModels */,
+				5B2D8012236E1285001DA868 /* Adapters */,
 			);
 			path = "Customer Detail";
+			sourceTree = "<group>";
+		};
+		5B2D8012236E1285001DA868 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				5B2D8010236E1280001DA868 /* RowAdapter.swift */,
+				5B2D8014236E12C7001DA868 /* InactiveCustomerAdapter.swift */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		5B2D8013236E1290001DA868 /* RowViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5B2D800C236E11A5001DA868 /* RowViewModel.swift */,
+				5B2D800E236E11E3001DA868 /* InactiveMessageRowViewModel.swift */,
+			);
+			path = RowViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,9 +363,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B2D800F236E11E3001DA868 /* InactiveMessageRowViewModel.swift in Sources */,
+				5B2D8017236E1435001DA868 /* TableViewBinder.swift in Sources */,
+				5B2D800D236E11A5001DA868 /* RowViewModel.swift in Sources */,
+				5B2D800B236E0FE1001DA868 /* InactiveMessageTableViewCell.swift in Sources */,
 				5B2D7FDE236DAECC001DA868 /* CustomerListViewController.swift in Sources */,
 				5B2D7FED236DC522001DA868 /* CustomerService.swift in Sources */,
 				5B2D7FE6236DC42E001DA868 /* Customer.swift in Sources */,
+				5B2D8011236E1280001DA868 /* RowAdapter.swift in Sources */,
 				5B2D7FF9236DFC32001DA868 /* UITableView+Dequeue.swift in Sources */,
 				5B2D8004236E0642001DA868 /* CustomerHeaderView.swift in Sources */,
 				5B2D7FFE236DFF37001DA868 /* CustomerTableViewCellViewModel.swift in Sources */,
@@ -339,6 +378,7 @@
 				5B2D7FB3236DAAD2001DA868 /* AppDelegate.swift in Sources */,
 				5B2D7FEF236DC7BD001DA868 /* CustomerRemoteService.swift in Sources */,
 				5B2D8007236E0DDC001DA868 /* CustomerDetailViewModel.swift in Sources */,
+				5B2D8015236E12C7001DA868 /* InactiveCustomerAdapter.swift in Sources */,
 				5B2D7FF7236DC904001DA868 /* CustomerCoordinator.swift in Sources */,
 				5B2D7FDB236DAE32001DA868 /* UIView+AutoLayout.swift in Sources */,
 				5B2D7FB5236DAAD2001DA868 /* SceneDelegate.swift in Sources */,

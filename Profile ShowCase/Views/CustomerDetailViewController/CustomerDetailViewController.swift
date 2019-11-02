@@ -34,8 +34,22 @@ class CustomerDetailViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindViewModel()
         setupViews()
         setupConstraints()
+    }
+    
+}
+
+// MARK: - Setup ViewModels
+extension CustomerDetailViewController {
+    
+    func bindViewModel() {
+        viewModel.reload = { [weak self] in
+            self?.tableView.reloadData()
+        }
+        
+        viewModel.performInitialViewSetup()
     }
     
 }
@@ -71,11 +85,14 @@ extension CustomerDetailViewController {
 extension CustomerDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.numberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let rowViewModel = viewModel.rowViewModel(at: indexPath.row)
+        let cell = tableView.getCell(type: rowViewModel.cellType)
+        (cell as? TableViewBinder)?.bind(row: rowViewModel)
+        return cell
     }
     
 }
